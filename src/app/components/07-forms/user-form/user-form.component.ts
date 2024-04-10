@@ -19,6 +19,7 @@ export class UserFormComponent implements OnInit, OnChanges {
       imageUrl: ['', [Validators.required, Validators.maxLength(300)]]
     });
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.selectedUser) {
       this.userForm.get('name')?.setValue(this.selectedUser.name);
@@ -29,9 +30,6 @@ export class UserFormComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    this.userForm.valueChanges.subscribe(() => {
-
-    });
   }
 
   save(): void {

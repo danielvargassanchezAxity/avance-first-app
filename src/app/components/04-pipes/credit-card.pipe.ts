@@ -4,7 +4,6 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'creditCard'
 })
 export class CreditCardPipe implements PipeTransform {
-
   transform(value: string): unknown {
     if (value.length == 16) {
       const lastFourDigits = value.slice(-4);
@@ -16,5 +15,4 @@ export class CreditCardPipe implements PipeTransform {
     }
     return value;
   }
-
 }

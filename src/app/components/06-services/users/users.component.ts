@@ -10,6 +10,7 @@ import { UsersService } from 'src/app/services/users.service';
 export class UsersComponent implements OnInit {
   selectedUser = new User();
   users: User[] = [];
+  
   constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
@@ -37,11 +38,7 @@ export class UsersComponent implements OnInit {
       this.updateUser(user);
     }
   }
-  updateUser(user: User): void {
-    this.usersService.updateUser(user).subscribe(() => {
-      this.getUsers();
-    });
-  }
+
   save(user: User): void {
     const { id, ...baseUserData } = user;
     const baseUser = new BaseUser();
@@ -52,6 +49,13 @@ export class UsersComponent implements OnInit {
     });
   }
 
+  
+  updateUser(user: User): void {
+    this.usersService.updateUser(user).subscribe(() => {
+      this.getUsers();
+    });
+  }
+  
   changeSelectedUser(user: User): void {
     this.selectedUser = user;
   }

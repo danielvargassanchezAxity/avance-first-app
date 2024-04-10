@@ -16,5 +16,4 @@ export class UserDetailComponent implements OnInit {
     let data = this.route.snapshot.data["user"];
     this.user = data;
   }
-
 }

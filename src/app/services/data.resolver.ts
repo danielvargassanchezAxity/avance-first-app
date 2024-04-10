@@ -18,6 +18,6 @@ export class DataResolver implements Resolve<User> {
   }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<User> {
     const userId = route.paramMap.get('id');
-    return this.userService.getById(userId ?? '').pipe(item => item.pipe(delay(2000)));
+    return this.userService.getById(userId ?? '');
   }
 }

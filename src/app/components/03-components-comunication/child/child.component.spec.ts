@@ -8,9 +8,9 @@ describe('ChildComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChildComponent ]
+      declarations: [ChildComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +21,12 @@ describe('ChildComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should emitevent', () => {
+    spyOn(component.valueChange, "emit");
+    component.inputValue = "test";
+    component.emitEvent();
+    expect(component.valueChange.emit).toHaveBeenCalledWith("test");
   });
 });

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PipeComponent } from './pipe.component';
+import { MockCreditCardPipe } from '../../mocks/pipes.mocks.html';
 
 describe('PipeComponent', () => {
   let component: PipeComponent;
@@ -8,9 +9,9 @@ describe('PipeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PipeComponent ]
+      declarations: [PipeComponent, MockCreditCardPipe]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

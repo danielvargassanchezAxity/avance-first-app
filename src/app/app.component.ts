@@ -14,7 +14,6 @@ export class AppComponent {
     private authService: AuthService,
     private router: Router
   ) {
-
   }
 
   setLogin(): void {

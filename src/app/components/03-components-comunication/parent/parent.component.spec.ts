@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ParentComponent } from './parent.component';
+import { MockChildComponent } from '../../mocks/components.mocks.html';
 
 describe('ParentComponent', () => {
   let component: ParentComponent;
@@ -8,9 +9,9 @@ describe('ParentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ParentComponent ]
+      declarations: [ParentComponent, MockChildComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +22,11 @@ describe('ParentComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should changeMessage', () => {
+    component.color = "red";
+    component.changeMessage("white");
+    expect(component.color).toBe("white");
   });
 });
