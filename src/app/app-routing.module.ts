@@ -8,6 +8,7 @@ import { PipeComponent } from './components/04-pipes/pipe/pipe.component';
 import { DirectivesComponent } from './components/05-directives/directives/directives.component';
 import { UsersComponent } from './components/06-services/users/users.component';
 import { AuthGuardGuard } from './services/auth-guard.guard';
+import { DataResolver } from './services/data.resolver';
 
 const routes: Routes = [
   {
@@ -43,6 +44,13 @@ const routes: Routes = [
     path: 'protected',
     loadChildren: () => import('./pages/protected-page/protected-page.module').then(m => m.ProtectedPageModule),
     canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'user/:id',
+    loadChildren: () => import('./pages/user-detail/user-detail.module').then(m => m.UserDetailModule),
+    resolve: {
+      user: DataResolver
+    }
   },
   {
     path: '',

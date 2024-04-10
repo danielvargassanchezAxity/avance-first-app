@@ -1,11 +1,9 @@
 <div class="card">
-    <h1>Users crud</h1>
-    <div>
-        <app-user-form [selectedUser]="selectedUser" (userCreated)="saveUser($event)"></app-user-form>
-    </div>
+    <h1>User Detail</h1>
+
     <div class="separator">
         <div class="card-container">
-            <div class="card" *ngFor="let user of users">
+            <div class="card">
                 <div class="users-content-header">
                     <div class="image-container">
                         <img [src]="user.image" alt="user image">
@@ -13,14 +11,11 @@
                     <div class="d-flex gap-15">
                         <h3>id: {{ user.id }}, nombre:{{ user.name }}</h3>
                     </div>
-                    <mat-icon class="cursor-pointer red-icon" (click)="deleteUser(user.id ?? '')">delete</mat-icon>
-                    <mat-icon class="cursor-pointer" (click)="changeSelectedUser(user)">edit</mat-icon>
                 </div>
                 <div>
                     <p>Email: {{ user.email }}</p>
                     <p>Phone: {{ user.phone }}</p>
                 </div>
-                <a [routerLink]="'/user/'+user.id ?? ''">Ver usuario</a>
             </div>
         </div>
     </div>

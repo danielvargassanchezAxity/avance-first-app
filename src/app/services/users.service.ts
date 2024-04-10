@@ -26,4 +26,8 @@ export class UsersService {
   updateUser(user: User): Observable<User> {
     return this.httpClient.put<User>(`${Endpoints.users.delete}/${user.id}`, user);
   }
+
+  getById(id: string): Observable<User> {
+    return this.httpClient.get<User>(`${Endpoints.users.get}/${id}`)
+  }
 }
