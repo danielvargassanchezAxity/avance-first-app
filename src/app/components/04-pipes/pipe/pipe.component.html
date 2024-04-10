@@ -1,0 +1,50 @@
+<div class="card">
+    <h2>Pipes</h2>
+    <div class="separator">
+        <p>Un pipe sirve para transformar la informacion en como se visualizara en el DOM</p>
+        <p>Ejemplos de pipes:</p>
+    </div>
+
+    <div class="separator">
+        <p>DatePipe</p>
+        <p>{{ today }}</p>
+        <p>{{ today | date }}</p>
+        <p>Medium: {{ today | date: 'medium' }}</p>
+        <p>short: {{ today | date: 'short' }}</p>
+        <p>Long: {{ today | date: 'long' }}</p>
+        <p>{{ today | date: 'h:mm:ss a' }}</p>
+        <p>{{ today | date: 'dd/MM/yyyy h:mm a z' }}</p>
+
+        <p>{{ today }}</p>
+        <a href="https://angular.io/api/common/DatePipe">Mas formatos</a>
+    </div>
+
+    <div class="separator">
+        <p>Uppercase y lowercase</p>
+        <p>{{ message | uppercase }}</p>
+        <p>{{ message | lowercase}}</p>
+        <p>{{message }}</p>
+    </div>
+
+    <div class="separator">
+        <p>Currency pipe</p>
+        <p>{{ price }}</p>
+        <p>{{ price | currency }}</p>
+        <p>{{ price | currency: 'EUR':'symbol':'0.0-1' }}</p>
+        <p>{{ price | currency: 'MXN':'symbol':'0.0-1' }}</p>
+        <a href="https://angular.io/api/common/CurrencyPipe">Mas información</a>
+    </div>
+
+    <div class="separator">
+        <p>Slice</p>
+        <p>{{ message | slice: 0:4 }}</p>
+        <p>{{ fruits | slice: 0:2 }}</p>
+    </div>
+
+    <div class="separator">
+        <p>My first pipe</p>
+        <p>{{ '1234123412341234' | creditCard }}</p>
+        <p>{{ '123412341234123' | creditCard }}</p>
+        <p>{{ 'asdadf2wefreg42f132sd' | creditCard }}</p>
+    </div>
+</div>

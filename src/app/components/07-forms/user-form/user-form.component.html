@@ -1,0 +1,51 @@
+<form [formGroup]="userForm" class="form-content">
+    <mat-form-field appearance="standard">
+        <mat-label>Nombre</mat-label>
+        <input type="text" matInput placeholder="Ex. John Doe" formControlName="name">
+        <mat-error *ngIf="userForm.get('name')?.hasError('required')">
+            Campo requerido
+        </mat-error>
+        <mat-error *ngIf="userForm.get('name')?.hasError('minlength')">
+            Mínimo 5 caracteres
+        </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="standard">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="Ex. johndoe@email.com" formControlName="email">
+        <mat-error *ngIf="userForm.get('email')?.hasError('required')">
+            Campo requerido
+        </mat-error>
+        <mat-error *ngIf="userForm.get('email')?.hasError('email')">
+            Email inválido
+        </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="standard">
+        <mat-label>Teléfono</mat-label>
+        <input type="tel" matInput placeholder="Ex. 1122334455" formControlName="phone">
+        <mat-error *ngIf="userForm.get('phone')?.hasError('required')">
+            Campo requerido
+        </mat-error>
+        <mat-error *ngIf="userForm.get('phone')?.hasError('pattern')">
+            Teléfono inválido
+        </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="standard">
+        <mat-label>Url de la imagen</mat-label>
+        <input type="url" matInput placeholder="Ex http://miiamge.com/image.png" formControlName="imageUrl">
+        <mat-error *ngIf="userForm.get('imageUrl')?.hasError('required')">
+            Campo requerido
+        </mat-error>
+        <mat-error *ngIf="userForm.get('imageUrl')?.hasError('maxlength')">
+            Máximo 300 caracteres
+        </mat-error>
+    </mat-form-field>
+    <div class="button-container">
+        <button mat-raised-button color="primary" [disabled]="!userForm.valid" (click)="save()">Guardar</button>
+    </div>
+</form>

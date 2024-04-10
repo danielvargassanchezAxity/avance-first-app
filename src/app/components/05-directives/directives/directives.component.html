@@ -1,0 +1,99 @@
+<ng-template #userTemplateInfo let-name="fullname" let-age="age">
+    <div>
+        <p>Nombre del usuario: {{ name }}</p>
+        <p>Edad: {{ age }}</p>
+    </div>
+</ng-template>
+
+
+<div class="card">
+    <h2>Directivas</h2>
+    <div class="separator">
+        <h4>Directivas estructurales</h4>
+        <p>NgIf</p>
+        <button (click)="showMessage = !showMessage">{{ showMessage ? 'Hide' : 'Show' }}</button>
+        <div *ngIf="showMessage">
+            <p>Hola que tal este mensaje debe mostrarse cuando show Message sea true</p>
+        </div>
+    </div>
+
+    <div class="separator">
+        <p>NgFor</p>
+        <div class="item" *ngFor="let product of products">
+            <div class="item-header">
+                <div class="product-image">
+                    <img [src]="product.image" alt="image">
+                </div>
+                <div class="product-description">
+                    <p>{{ product.id }}</p>
+                    <p>{{ product.name }}</p>
+                </div>
+            </div>
+            <div class="item-price">
+                <p>{{ product.price | currency }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="separator">
+        <p>NgSwitch</p>
+        <select [(ngModel)]="selectedOption">
+            <option value="fruits">Frutas</option>
+            <option value="vegetables">Verduras</option>
+        </select>
+
+        <div [ngSwitch]="selectedOption">
+            <div *ngSwitchCase="'fruits'">
+                <h4>Listado de frutas</h4>
+                <ul>
+                    <li *ngFor="let fruit of fruits">{{ fruit }}</li>
+                </ul>
+            </div>
+            <div *ngSwitchCase="'vegetables'">
+                <h4>Listado de verduras</h4>
+                <ul>
+                    <li *ngFor="let fruit of fruits">{{ fruit }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="separator">
+        <p>NgTemplateOutlet</p>
+        <p>te permite insertar dinámicamente un template en otro lugar</p>
+        <ng-container *ngFor="let user of users">
+            <ng-container
+                *ngTemplateOutlet="userTemplateInfo; context: { fullname: user.name, age: user.age}"></ng-container>
+        </ng-container>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Directivas de atributos</h2>
+    <div class="separator">
+        <p>Ngclass</p>
+        <button (click)="isWarning = !isWarning">Change type</button>
+        <div class="message" [ngClass]="{
+            'danger color-white': isWarning, 
+            'success': !isWarning
+            }">
+            <p>Este es un ejemplo del ngClass</p>
+        </div>
+    </div>
+
+    <div class="separator">
+        <p>NgStyle</p>
+        <button (click)="isWarning = !isWarning">Change type</button>
+        <div class="message" [ngStyle]="{
+            'background-color': isWarning ? '#dc3545':'#07923a',
+            'color': isWarning ? 'black' : 'white' 
+            }">
+            <p>Este es un ejemplo del ngClass</p>
+        </div>
+    </div>
+
+    <div>
+        <p>NgDisabled</p>
+        <button [disabled]="isWarning">Click me!</button>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "name": "John Doe",
+      "email": "johndoe@email.com",
+      "phone": "1122334455",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5XahPWZKhNvKmmYWZnMaOpqCZOnjtNaCvMfwgaxYk2g&s",
+      "id": "1"
+    },
+    {
+      "name": "Emily Brown",
+      "email": "emilybrown@email.comc",
+      "phone": "4455667788",
+      "image": "https://png.pngtree.com/png-clipart/20190516/original/pngtree-users-vector-icon-png-image_3725294.jpg",
+      "id": "4"
+    },
+    {
+      "id": "256a",
+      "name": "Michael Johnson",
+      "email": "michaeljohnson@email.com",
+      "phone": "3344556677",
+      "image": "https://static.vecteezy.com/system/resources/thumbnails/019/879/186/small/user-icon-on-transparent-background-free-png.png"
+    }
+  ]
+}

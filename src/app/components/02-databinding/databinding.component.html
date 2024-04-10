@@ -1,0 +1,29 @@
+<div class="card">
+    <h2>Databinding</h2>
+    <div class="separator">
+        <p>Data desde el ts:</p>
+        <p><span class="text-bold">Interpolacion:</span> {{ interpolation }} {{ value }} </p>
+    </div>
+
+    <div class="separator">
+        <div [class]="className">
+            <p>Enlace de propiedades, ejemplo en un div:</p>
+        </div>
+        <button [disabled]="disabledButton">Click me!</button>
+    </div>
+
+    <div class="separator">
+        <p>Enlace de eventos</p>
+        <button (click)="changeButtonStatus()">Change button status</button>
+    </div>
+
+    <div class="separator">
+        <p>Enlace bidireccional:</p>
+        <input type="text" [(ngModel)]="inputValue"> <button (click)="clearInput()">X</button>
+        <p>Valor del input: {{ inputValue }}</p>
+    </div>
+    <div class="separator">
+        <p>My first pipe</p>
+        <p>{{ '1234123412340000' | creditCard }}</p>
+    </div>
+</div>

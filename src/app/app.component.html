@@ -1,0 +1,22 @@
+<mat-toolbar>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu" class="d-flex flex-column">
+        <a mat-button routerLink="/first-component">My first component</a>
+        <a mat-button routerLink="/databinding">Databinding</a>
+        <a mat-button routerLink="/comunication">Components communication</a>
+        <a mat-button routerLink="/pipes">Pipes</a>
+        <a mat-button routerLink="/directives">Directives</a>
+        <a mat-button routerLink="/users">Users crud</a>
+        <a mat-button routerLink="/first-page">My first page</a>
+        <a mat-button routerLink="/protected">Protected page</a>
+    </mat-menu>
+    <span>My App</span>
+    <button (click)="logout()">Logout</button>
+</mat-toolbar>
+<button (click)="setLogin()">Login</button>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

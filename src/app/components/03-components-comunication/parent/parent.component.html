@@ -1,0 +1,7 @@
+<div class="card">
+    <h2>Input & Output decorators:</h2>
+    <div class="separator">
+        <p [style.color]="color">{{ message }}</p>
+        <app-child [message]="message" (valueChange)="changeMessage($event)"></app-child>
+    </div>
+</div>
